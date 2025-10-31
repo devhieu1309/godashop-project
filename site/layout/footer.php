@@ -3,11 +3,15 @@
       <div class="w-[1200px] mx-auto py-5 flex justify-between">
           <div class="basis-1/4">
               <h4 class="text-[#EC0000] text-[18px] uppercase font-bold">Danh mục</h4>
+              <?php
+                $categoryRepository = new CategoryRepository();
+                $categories = $categoryRepository->getAll();
+                ?>
               <ul class="text-white text-[14px]">
-                <?php foreach($categories as $category) : ?>
-                  <li><a href="#"><?php echo $category->getName() ?></a></li>
-                <?php endforeach ?>
-                </ul>
+                  <?php foreach ($categories as $category) : ?>
+                      <li><a href="#"><?php echo $category->getName() ?></a></li>
+                  <?php endforeach ?>
+              </ul>
           </div>
           <div class="basis-1/4">
               <h4 class="text-[#EC0000] text-[18px] uppercase font-bold">Liên kết</h4>

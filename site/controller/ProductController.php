@@ -3,6 +3,12 @@ class ProductController
 {
     function index()
     {
-        echo "Trang danh sách sản phẩm";
+      $productRepository = new ProductRepository();
+      $item_per_page = 9;
+      $page = 1;
+      $conds = [];
+      $sorts = [];
+      $products = $productRepository->getBy($conds, $sorts, $page, $item_per_page);
+      require "view/product/index.php";
     }
 }
