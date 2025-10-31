@@ -2,6 +2,7 @@
 session_start();
 require "../config.php";
 require "../connectDB.php";
+require "../bootstrap.php";
 
 // router 
 $c = $_GET['c'] ?? "home";
