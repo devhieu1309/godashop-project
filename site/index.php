@@ -1,0 +1,13 @@
+<?php
+session_start();
+require "../config.php";
+require "../connectDB.php";
+
+// router 
+$c = $_GET['c'] ?? "home";
+$a = $_GET['a'] ?? "index";
+$controllerName = ucfirst($c) . "Controller";
+require "controller/" . $controllerName . ".php";
+$controller = new $controllerName();
+$controller->$a();
+?>

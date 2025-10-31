@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./site/public/css/input.css -o ./site/public/css/output.css --minify",
+    "watch:css": "tailwindcss -i ./site/public/css/input.css -o ./site/public/css/output.css --watch"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@tailwindcss/cli": "^4.1.16",
+    "tailwind-fontawesome": "^0.7.1",
+    "tailwindcss": "^4.1.16"
+  }
+}
