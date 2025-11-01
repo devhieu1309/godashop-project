@@ -16,45 +16,45 @@
 <!-- End Slides -->
 
 <!-- Services -->
-<div class="services flex justify-between items-center mx-6 py-5">
+<div class="services grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mx-6 py-5">
     <div
-        class="flex items-center justify-center basis-1/4 mx-5 bg-[#F2F2F2] py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
-        <div class="pr-3">
-            <img class="h-12 w-12 object-contain" src="/upload/chinhsach_3.png" alt="">
+        class="flex items-center justify-center bg-[#F2F2F2] py-2 md:py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
+        <div class="pr-1 md:pr-3">
+            <img class="h-8 w-18 md:h-12 md:w-12 object-contain" src="/upload/chinhsach_3.png" alt="">
         </div>
         <div>
-            <h3 class="uppercase font-bold text-[#252525] text-[16px]">7 Ngày đổi trả</h3>
-            <p class="text-gray-900">Chăm sóc khách hàng cực tốt</p>
+            <h3 class="uppercase font-bold text-[#252525] text-[14px] md:text-[16px]">7 Ngày đổi trả</h3>
+            <p class="text-gray-900 text-[14px] md:text-[16px] ">Chăm sóc khách hàng cực tốt</p>
         </div>
     </div>
     <div
-        class="flex items-center justify-center basis-1/4 mx-5 bg-[#F2F2F2] py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
+        class="flex items-center justify-center bg-[#F2F2F2] py-2 md:py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
         <div class="pr-3">
             <img class="h-12 w-12 object-contain" src="/upload/chinhsach_1.webp" alt="">
         </div>
         <div>
-            <h3 class="uppercase font-bold text-[#252525] text-[16px]">Miễn phí ship</h3>
-            <p class="text-gray-900">Với dịch vụ giao hàng tiết kiệm</p>
+            <h3 class="uppercase font-bold text-[#252525] text-[14px] md:text-[16px] ">Miễn phí ship</h3>
+            <p class="text-gray-900 text-[14px] md:text-[16px]">Với dịch vụ giao hàng tiết kiệm</p>
         </div>
     </div>
     <div
-        class="flex items-center justify-center basis-1/4 mx-5 bg-[#F2F2F2] py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
-        <div class="pr-3">
-            <img class="h-12 w-12 object-contain" src="/upload/chinhsach_2.webp" alt="">
-        </div>
-        <div>
-            <h3 class="uppercase font-bold text-[#252525] text-[16px]">Buôn bán như bán sỉ</h3>
-            <p class="text-gray-900">Giá hợp lý nhất quả đất</p>
-        </div>
-    </div>
-    <div
-        class="flex items-center justify-center basis-1/4 mx-5 bg-[#F2F2F2] py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
+        class="flex items-center justify-center bg-[#F2F2F2] py-2 md:py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
         <div class="pr-3">
             <img class="h-12 w-12 object-contain" src="/upload/chinhsach_4.webp" alt="">
         </div>
         <div>
-            <h3 class="uppercase font-bold text-[#252525] text-[16px]">Chất lượng hàng đầu</h3>
-            <p class="text-gray-900">Chăm sóc bạn như người thân</p>
+            <h3 class="uppercase font-bold text-[#252525] text-[14px] md:text-[16px]">Chất lượng hàng đầu</h3>
+            <p class="text-gray-900 text-[14px] md:text-[16px]">Chăm sóc bạn như người thân</p>
+        </div>
+    </div>
+    <div
+        class="flex items-center justify-center bg-[#F2F2F2] py-2 md:py-5 border-2 border-transparent transition-all duration-300 hover:border-[#EC0000]">
+        <div class="pr-3">
+            <img class="h-12 w-12 object-contain" src="/upload/chinhsach_2.webp" alt="">
+        </div>
+        <div>
+            <h3 class="uppercase font-bold text-[#252525] text-[14px] md:text-[16px]">Buôn bán như bán sỉ</h3>
+            <p class="text-gray-900 text-[14px] md:text-[16px]">Giá hợp lý nhất quả đất</p>
         </div>
     </div>
 </div>
@@ -69,7 +69,7 @@
                     Sản phẩm nổi bật
                 </h4>
             </div>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <?php foreach ($featuredProducts as $product) : ?>
                     <?php require "layout/product.php" ?>
                 <?php endforeach ?>
@@ -151,7 +151,7 @@
                     Sản phẩm mới nhất
                 </h4>
             </div>
-            <div class="grid grid-cols-4 gap-4">
+             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <?php foreach ($latestProducts as $product) : ?>
                 <?php  require "layout/product.php" ?>
                 <?php endforeach ?>
@@ -235,7 +235,7 @@
                     <?php echo $categoryName ?>
                 </h4>
             </div>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <?php foreach($products as $product) :  ?>
                 <!-- <div class="relative flex flex-col items-center justify-center group">
                     <div>

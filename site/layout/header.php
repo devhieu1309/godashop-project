@@ -45,7 +45,6 @@
                                 class="w-full my-3 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 transition duration-200" />
                             <input
                                 type="text"
-                                id="password"
                                 name="password"
                                 placeholder="Mật khẩu"
                                 class="w-full my-3 px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 placeholder-gray-400 transition duration-200" />
@@ -137,11 +136,34 @@
 
                     <ul class="lg:hidden block px-4">
                         <li>
-                            <a href="">
+                            <button id="ct-toggle-top-menu">
                                 <i class="fa-solid fa-bars text-white"></i>
-                            </a>
+                            </button>
                         </li>
                     </ul>
+
+                    <div id="ct-top-menu" class="hidden fixed top-0 left-0 w-64 h-full bg-black/70 text-white p-4 z-50">
+                        <ul class="p-4 flex flex-col text-[14px] space-y-3">
+                            <li>
+                                <a class="text-[#e15959]" href="#">Trang chủ</a>
+                            </li>
+                            <li>
+                                <a class="hover:text-[#e15959]" href="#">Sản phẩm</a>
+                            </li>
+                            <li>
+                                <a class="hover:text-[#e15959]" href="#">Chính sách đổi trả</a>
+                            </li>
+                            <li>
+                                <a class="hover:text-[#e15959]" href="#">Chính sách thanh toán</a>
+                            </li>
+                            <li>
+                                <a class="hover:text-[#e15959]" href="#">Chính sách giao hàng</a>
+                            </li>
+                            <li>
+                                <a class="hover:text-[#e15959]" href="#">Liên hệ</a>
+                            </li>
+                        </ul>
+                    </div>
 
                     <ul class="text-white flex space-x-4 px-4">
                         <li><button command="show-modal" commandfor="register">Đăng ký</button></li>
@@ -150,14 +172,14 @@
                 </div>
             </div>
             <div class="header-main lg:max-w-[1200px] md:max-w-[900px] mx-auto pt-1">
-                <div class="flex md:flex-row sm:flex-col justify-between items-center">
-                    <div class="lg:basis-1/3">
-                        <img class="w-[390px] h-[165px] object-cover" src="/upload/goda450x170_1.jpg">
+                <div class="flex flex-wrap md:flex-row justify-center md:justify-between items-center">
+                    <div class="sm:basis-1/2 lg:basis-1/3">
+                        <img class="w-[375px] h-[150px] md:w-[390px] md:h-[165px] object-cover" src="/upload/goda450x170_1.jpg">
                     </div>
                     <div class="lg:basis-1/3 hidden lg:block">
                         <img class="w-[400px] h-[170px] object-cover" src="/upload/godakeben450x170.jpg">
                     </div>
-                    <div class="lg:basis-1/3 flex flex-col space-y-6">
+                    <div class="sm:basis-1/2 lg:basis-1/3 flex flex-col space-y-6 my-2">
                         <div>
                             <p class="text-[#252525]">Hotline: <span
                                     class="text-red-600 font-semibold">0352.448.746</span></p>

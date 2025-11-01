@@ -6,4 +6,22 @@
   --font-roboto: "Roboto", sans-serif;
 }
 
+.hidden {
+  display: none;
+}
+
+.ct-topmenu-expanded {
+  display: block;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 /* plugins: [ require("tailwind-fontawesome")]; */
