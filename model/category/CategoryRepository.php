@@ -74,4 +74,25 @@ class CategoryRepository
 
         return $categories;
     }
+
+    public function find($id)
+{
+    global $conn;
+
+    $sql = "SELECT * FROM category WHERE id = " . intval($id) . " LIMIT 1";
+
+    $result = $conn->query($sql);
+
+    if ($result && $result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $category  = new Category(
+            $row['id'],
+            $row['name']
+        );
+        return $category;
+    }
+
+    return null;
+}
+
 }

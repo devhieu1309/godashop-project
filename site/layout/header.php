@@ -142,13 +142,14 @@
                         </li>
                     </ul>
 
+                    <?php global $c; ?>
                     <div id="ct-top-menu" class="hidden fixed top-0 left-0 w-64 h-full bg-black/70 text-white p-4 z-50">
                         <ul class="p-4 flex flex-col text-[14px] space-y-3">
                             <li>
-                                <a class="text-[#e15959]" href="#">Trang chủ</a>
+                                <a class="<?php echo ($c == 'home' ? "ct-active" : "") ?>" href="index.php">Trang chủ</a>
                             </li>
                             <li>
-                                <a class="hover:text-[#e15959]" href="#">Sản phẩm</a>
+                                <a class="<?php echo ($c == 'product' ? "ct-active" : "") ?> hover:text-[#e15959]" href="index.php/?c=product">Sản phẩm</a>
                             </li>
                             <li>
                                 <a class="hover:text-[#e15959]" href="#">Chính sách đổi trả</a>
@@ -206,9 +207,9 @@
             <!-- <div class="bg-red-500">123</div> -->
             <div
                 class="max-w-[1200px] lg:max-w-[970px] md:max-w-[870px] sm:max-w-[630px] mx-auto flex justify-between items-center h-12">
-                <ul class="hidden md:flex text-white font-bold text-[15px] space-x-5">
-                    <li class="text-yellow-400"><a href="">Trang chủ</a></li>
-                    <li class="hover:text-yellow-400"><a href="">Sản phẩm</a></li>
+                <ul class="md:flex text-white font-bold text-[15px] space-x-5">
+                    <li><a class="<?php echo ($c == 'home' ? "ct-active" : "") ?>" href="index.php">Trang chủ</a></li>
+                    <li><a class="<?php echo ($c == 'product' ? "ct-active" : "") ?>" href="index.php?c=product">Sản phẩm</a></li>
                     <li class="hover:text-yellow-400"><a href="">Chính sách đổi trả</a></li>
                     <li class="hover:text-yellow-400"><a href="">Chính sách thanh toán</a></li>
                     <li class="hover:text-yellow-400"><a href="">Chinh sách giao hàng</a></li>

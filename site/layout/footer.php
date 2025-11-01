@@ -78,6 +78,8 @@
           },
       });
   </script>
+  <script src="/site/public/vendor/jquery-3.7.1.min.js"></script>
+  <script src="/site/public/vendor/popper.min.js"></script>
   <script src="/site/public/js/script.js"></script>
   </body>
 

@@ -24,4 +24,8 @@
   }
 }
 
+.ct-active {
+  @apply text-yellow-400
+}
+
 /* plugins: [ require("tailwind-fontawesome")]; */

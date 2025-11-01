@@ -1,3 +1,4 @@
+// Xử lý menu mobile
 const topMenu = document.getElementById('ct-top-menu');
 const toggleTopMenu = document.getElementById('ct-toggle-top-menu');
 
@@ -17,3 +18,11 @@ document.addEventListener('click', (e) => {
     }
   }
 });
+
+// Tìm kiếm theo range
+$('.range input').click(function(event) {
+    /* Act on the event */
+    var price_range = $(this).val();
+    window.location.href = "index.php?c=product&price-range=" + price_range;
+});
+

@@ -72,6 +72,7 @@ class ProductRepository
             $sql .= " LIMIT $offset, $qty_per_page";
         }
 
+        //  echo "MINH HIEU TEST: " . $sql;  die();
         // 4️. Thực thi truy vấn
         $result = $conn->query($sql);
         $products = [];
