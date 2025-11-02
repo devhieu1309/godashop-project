@@ -10,8 +10,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/site/public/css/output.css">
     <link rel="stylesheet" href="/site/public/css/style.css">
+    <link rel="stylesheet" href="/site/public/css/output.css">
 </head>
 
 <body>
@@ -118,23 +118,8 @@
         <header class="header">
             <div
                 class="header-top relative bg-[#252525] py-1 before:absolute before:bottom-0 before:left-0 before:right-0 before:content-[''] before:h-0.5 before:bg-[#AB17B3]">
-                <div class="flex justify-between">
-                    <ul class="lg:flex px-4 space-x-3 hidden">
-                        <li>
-                            <a href="https://www.facebook.com/"><img class="h-[25px] w-[25px] object-contain"
-                                    src="/upload/icons8-facebook-30.png" alt="Facebook"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/"><img class="h-[25px] w-[25px] object-contain"
-                                    src="/upload/icons8-instagram-30.png" alt="Instagram"></a>
-                        </li>
-                        <li>
-                            <a href="https://www.youtube.com/"><img class="h-[25px] w-[25px] object-contain"
-                                    src="/upload/icons8-youtube-30.png" alt="Youtube"></a>
-                        </li>
-                    </ul>
-
-                    <ul class="lg:hidden block px-4">
+                <div class="flex justify-between md:justify-end">
+                    <ul class="lg:hidden flex px-4">
                         <li>
                             <button id="ct-toggle-top-menu">
                                 <i class="fa-solid fa-bars text-white"></i>
@@ -177,9 +162,13 @@
                     <div class="sm:basis-1/2 lg:basis-1/3">
                         <img class="w-[375px] h-[150px] md:w-[390px] md:h-[165px] object-cover" src="/upload/goda450x170_1.jpg">
                     </div>
-                    <div class="lg:basis-1/3 hidden lg:block">
+                    <!-- <div class="lg:basis-1/3 hidden lg:block">
+                        <img class="w-[400px] h-[170px] object-cover" src="/upload/godakeben450x170.jpg">
+                    </div> -->
+                    <div class="hidden lg:block lg:basis-1/3">
                         <img class="w-[400px] h-[170px] object-cover" src="/upload/godakeben450x170.jpg">
                     </div>
+
                     <div class="sm:basis-1/2 lg:basis-1/3 flex flex-col space-y-6 my-2">
                         <div>
                             <p class="text-[#252525]">Hotline: <span

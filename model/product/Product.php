@@ -9,7 +9,6 @@ class Product
     protected $discount_percentage;
     protected $discount_from_date;
     protected $discount_to_date;
-    // protected $sale_price;
     protected $featured_image;
     protected $inventory_qty;
     protected $create_date;
@@ -18,8 +17,9 @@ class Product
     protected $featured;
     protected $category_id;
     protected $brand_id;
+    protected $sale_price;
 
-    function __construct($id, $name, $barcode, $sku, $price, $discount_percentage, $discount_from_date, $discount_to_date, $featured_image, $inventory_qty, $create_date, $description, $start, $featured, $category_id, $brand_id) {
+    function __construct($id, $name, $barcode, $sku, $price, $discount_percentage, $discount_from_date, $discount_to_date, $featured_image, $inventory_qty, $create_date, $description, $start, $featured, $category_id, $brand_id, $sale_price) {
         $this->id = $id;
         $this->name = $name;
         $this->barcode = $barcode;
@@ -36,6 +36,7 @@ class Product
         $this->featured = $featured;
         $this->category_id = $category_id;
         $this->brand_id = $brand_id;
+        $this->sale_price = $sale_price;
     }
 
     function getDiscountPercentage() {
@@ -59,6 +60,6 @@ class Product
 
     function getSalePrice()
     {
-        return ((100 - $this->discount_percentage) / 100) * $this->price;
+        return $this->sale_price;
     }
 }

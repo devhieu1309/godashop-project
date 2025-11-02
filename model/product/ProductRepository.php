@@ -22,7 +22,7 @@ class ProductRepository
     function getBy($array_conds = [], $array_sorts = [], $page = null, $qty_per_page = 10)
     {
         global $conn;
-        $sql = "SELECT * FROM product WHERE 1=1";
+        $sql = "SELECT * FROM view_product WHERE 1=1";
 
         // 1. Xử lý điều kiện lọc
         foreach ($array_conds as $column => $cond) {
@@ -97,6 +97,7 @@ class ProductRepository
                     $row['featured'],
                     $row['category_id'],
                     $row['brand_id'],
+                    $row["sale_price"]
                 );
                 $products[] = $product;
             }

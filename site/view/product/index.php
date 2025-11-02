@@ -75,12 +75,16 @@
                         <div class="flex items-center gap-2">
                             <label for="sort" class="text-gray-700 font-medium text-sm">Sắp xếp:</label>
                             <select
-                                id="sort"
+                                id="sort-select"
                                 name="sort"
                                 class="border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
-                                <option value="asc">Giá tăng dần</option>
-                                <option value="desc">Giá giảm dần</option>
-                                <option value="az">Từ A - Z</option>
+                                <option value="" <?php echo empty($sort) ? "selected" : "" ?>>Mặc định</option>
+                                <option value="price_asc" <?php echo $sort == "price_asc" ? "selected" : "" ?>>Giá tăng dần</option>
+                                <option value="price_desc" <?php echo $sort == "price_desc" ? "selected" : "" ?>>Giá giảm dần</option>
+                                <option value="alpha_asc" <?php echo $sort == "alpha_asc" ? "selected" : "" ?>>Từ A - Z</option>
+                                <option value="alpha_desc" <?php echo $sort == "alpha_desc" ? "selected" : "" ?>>Từ Z - A</option>
+                                <option value="created_asc" <?php echo $sort == "created_asc" ? "selected" : "" ?>>Cũ đến mới</option>
+                                <option value="created_desc" <?php echo $sort == "created_desc" ? "selected" : "" ?>>Mới đến cũ</option>
                             </select>
                         </div>
                     </div>
@@ -91,27 +95,31 @@
                     </div>
                     <nav aria-label="Page navigation example" class="text-right py-5">
                         <ul class="inline-flex -space-x-px text-sm">
+                            <?php if ($page != 1) : ?>
+                                <li>
+                                    <a href="javascript:void(0)" onclick="goToPage(<?php echo $page - 1 ?>)" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Trước</a>
+                                </li>
+                            <?php endif ?>
+                            <?php for ($i = 1; $i <= $pageNumber; $i++) : ?>
+                                <li>
+                                    <?php
+                                    $activeClass = ($page == $i)
+                                        ? 'text-white bg-blue-600 border-blue-600 hover:bg-blue-700 hover:text-white'
+                                        : 'text-gray-500 bg-white border-gray-300 hover:bg-gray-100 hover:text-gray-700 
+           dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white';
+                                    ?>
+                                    <a href="javascript:void(0)"
+                                        onclick="goToPage(<?php echo $i; ?>)"
+                                        class="flex items-center justify-center px-3 h-8 leading-tight border <?php echo $activeClass; ?>">
+                                        <?php echo $i; ?>
+                                    </a>
+                                </li>
+                            <?php endfor ?>
+                            <?php if($page != $pageNumber) : ?>
                             <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Previous</a>
+                                <a href="javascript:void(0)" onclick="goToPage(<?php echo $page + 1 ?>)" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Sau</a>
                             </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                            </li>
-                            <li>
-                                <a href="#" aria-current="page" class="flex items-center justify-center px-3 h-8 text-blue-600 border border-gray-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">4</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">5</a>
-                            </li>
-                            <li>
-                                <a href="#" class="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Next</a>
-                            </li>
+                            <?php endif ?>
                         </ul>
                     </nav>
                 </div>

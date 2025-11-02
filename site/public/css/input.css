@@ -5,10 +5,10 @@
 @theme {
   --font-roboto: "Roboto", sans-serif;
 }
-
+/* 
 .hidden {
   display: none;
-}
+} */
 
 .ct-topmenu-expanded {
   display: block;

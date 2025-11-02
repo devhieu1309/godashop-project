@@ -5,8 +5,8 @@ class ProductController
   {
     $productRepository = new ProductRepository();
     $categoryRepository = new CategoryRepository();
-    $item_per_page = 9;
-    $page = 1;
+    $item_per_page = ITEM_PER_PAGE;
+    $page = $_GET['page'] ?? 1;
     $conds = [];
     $sorts = [];
     $categoryName = "Tất cả sản phẩm";
@@ -29,7 +29,7 @@ class ProductController
       $start = $tmp[0];
       $end = $tmp[1];
       $conds = [
-        "price" => [
+        "sale_price" => [
           "type" => "BETWEEN",
           "val" => $tmp
         ]
@@ -37,7 +37,7 @@ class ProductController
 
       if ($end == "greater") {
         $conds = [
-          "price" => [
+          "sale_price" => [
             "type" => ">=",
             "val" => $start
           ]
@@ -45,8 +45,26 @@ class ProductController
       }
     }
 
+    $sort = $_GET['sort'] ?? null;
+    if ($sort) {
+      $tmp = explode("_", $sort);
+      $first = $tmp[0];
+      $second = $tmp[1];
+      $mapCol = [
+        "price" => "sale_price",
+        "alpha" => "name",
+        "created" => "created_date",
+      ];
+      $column = $mapCol[$first];
+      $order = $second;
+      $sorts = [$column => $order];
+    }
 
     $products = $productRepository->getBy($conds, $sorts, $page, $item_per_page);
+
+    $totalProducts = $productRepository->getBy($conds, $sorts);
+
+    $pageNumber = ceil(count($totalProducts) / $item_per_page);
 
     // Lấy tất cả danh mục
     $categoryRepository = new CategoryRepository();
